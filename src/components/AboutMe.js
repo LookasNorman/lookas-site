@@ -41,9 +41,17 @@ export default function AboutMe() {
       <div className={classes.details}>
         <CardHeader title="Łukasz Konieczny" subheader="PHP Backend Developer" />
         <CardContent className={classes.content}>
-          <Typography variant="body2" color="textSecondary" component="p" align="justify">
-            Jestem PHP Backend Devloperem z podstawową znajomością frontend. Programuję w fraemworku Symfony 3.4 i 4.4.
+          <Typography variant="body2" color="textPrimary" component="p" align="justify">
+            Junior PHP Backend Devloperem z podstawową znajomością frontend. Programuję w fraemworku Symfony 3.4 i 4.4.
             Z fraemworków frontend posiadam podstawową znajomość React.
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p" align="justify">
+            W dotychczasowej karierze zawodowej zawsze starałem się wykorzystać technologie do poprawy wydajności pracy.
+            Początkowo było to Excel z VBA później PHP i MySQL. Jako, że programowanie przynosi mi coraz więcej
+            satysfakcji postanowiłem pójść na profesjonalny kurs, wybrałem Backend Developer PHP z rozszerzeniem o
+            JavaScript: React + Redux. Tworząc aplikację do zarządzania fermą reprodukcyjną początkowo myślałem o
+            usprawnieniu swojej pracy. Sukcesywnie rozbudowując jej funkcjonalności sprawiłem, że w chwili obecnej nie
+            wyobrażamy sobie bez niej pracy na fermie.
           </Typography>
         </CardContent>
         <div className={classes.chip}>
