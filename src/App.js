@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import AboutMe from './components/AboutMe'
 import Portfolio from './components/Portfolio'
 import Expirience from './components/Expirience'
+import Courses from './components/Courses'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +34,7 @@ export default function CenteredGrid() {
           <Expirience />
         </Grid>
         <Grid item xs={4}>
-          <Paper className={classes.paper}>xs=4</Paper>
+          <Courses />
         </Grid>
       </Grid>
     </div>
