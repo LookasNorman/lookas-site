@@ -11,7 +11,6 @@ import LKPhoto from '../../media/LKPhoto.jpg'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
 import { Tooltip } from '@material-ui/core'
-import { red } from '@material-ui/core/colors'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     flex: '1 0 auto',
   },
   cover: {
-    minWidth: 120,
+    minWidth: 320,
   },
   chip: {
     display: 'flex',
