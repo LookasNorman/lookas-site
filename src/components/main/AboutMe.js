@@ -4,13 +4,18 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardMedia from '@material-ui/core/CardMedia'
+import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 import Chip from '@material-ui/core/Chip'
 import LKPhoto from '../../media/LKPhoto.jpg'
+import PhoneIcon from '@material-ui/icons/Phone'
+import EmailIcon from '@material-ui/icons/Email'
+import { Tooltip } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    marginBottom: '1rem',
   },
   details: {
     display: 'flex',
@@ -20,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     flex: '1 0 auto',
   },
   cover: {
-    minWidth: 120,
+    minWidth: 320,
   },
   chip: {
     display: 'flex',
@@ -29,6 +34,12 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(0.5),
     },
+  },
+  tooltip: {
+    width: '92px',
+    height: '36px',
+    borderRadius: '18px',
+    backgroundColor: 'lightgray',
   },
 }))
 
@@ -54,6 +65,14 @@ export default function AboutMe() {
             wyobrażamy sobie bez niej pracy na fermie.
           </Typography>
         </CardContent>
+        <CardActions>
+          <Tooltip title={<h3>+48 669 905 464</h3>} interactive className={classes.tooltip}>
+            <PhoneIcon style={{ fill: 'orange' }} />
+          </Tooltip>
+          <Tooltip title={<h3>lookasziebice@gmail.com</h3>} className={classes.tooltip}>
+            <EmailIcon style={{ fill: 'orange' }} />
+          </Tooltip>
+        </CardActions>
         <div className={classes.chip}>
           <Chip label="PHP" />
           <Chip label="Symfony" />
