@@ -1,10 +1,11 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 import Avatar from '@material-ui/core/Avatar'
 import SettingsIcon from '@material-ui/icons/Settings'
-import { ListItem, ListItemText, Chip, Typography } from '@material-ui/core'
+import { ListItem, ListItemText, Chip, Typography, ListItemIcon } from '@material-ui/core'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,73 +14,84 @@ const useStyles = makeStyles((theme) => ({
   inline: {
     align: 'right',
   },
+  content: {
+    flex: '1 0 auto',
+  },
 }))
 
 export default function Expirience() {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <ListItem>
-            <ListItemAvatar>
-              <Avatar>
-                <SettingsIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="Doświadczenie" />
-          </ListItem>
-        </Grid>
-        <Grid item xs={6}>
-          <Chip label="PHP" />
-        </Grid>
-        <Grid item xs={6}>
+    <Card className={classes.root}>
+      <div className={classes.details}>
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar>
+              <SettingsIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText primary="Doświadczenie" />
+        </ListItem>
+      </div>
+      <CardContent className={classes.content}>
+        <ListItem>
+          <listItemIcon>
+            <Chip label="PHP" />
+          </listItemIcon>
           <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
             7 years
           </Typography>
-        </Grid>
-        <Grid item xs={6}>
-          <Chip label="MySQL" />
-        </Grid>
-        <Grid item xs={6}>
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <Chip label="MySQL" />
+          </ListItemIcon>
           <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
             7 years
           </Typography>
-        </Grid>
-        <Grid item xs={6}>
-          <Chip label="Symfony" />
-        </Grid>
-        <Grid item xs={6}>
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <Chip label="Symfony" />
+          </ListItemIcon>
           <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
             2 years
           </Typography>
-        </Grid>
-        <Grid item xs={6}>
-          <Chip label="JavaScript" />
-        </Grid>
-        <Grid item xs={6}>
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <Chip label="JavaScript" />
+          </ListItemIcon>
           <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
             2 years
           </Typography>
-        </Grid>
-        <Grid item xs={6}>
-          <Chip label="JQuery" />
-        </Grid>
-        <Grid item xs={6}>
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <Chip label="JQuery" />
+          </ListItemIcon>
           <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
             2 years
           </Typography>
-        </Grid>
-        <Grid item xs={6}>
-          <Chip label="React" />
-        </Grid>
-        <Grid item xs={6}>
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <Chip label="Scrum" />
+          </ListItemIcon>
           <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
             1 years
           </Typography>
-        </Grid>
-      </Grid>
-    </div>
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <Chip label="React" />
+          </ListItemIcon>
+          <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
+            1 years
+          </Typography>
+        </ListItem>
+      </CardContent>
+    </Card>
   )
 }
