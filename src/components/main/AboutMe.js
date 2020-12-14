@@ -6,7 +6,7 @@ import CardHeader from '@material-ui/core/CardHeader'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import Chip from '@material-ui/core/Chip'
-import LKPhoto from './../media/LKPhoto.jpg'
+import LKPhoto from '../../media/LKPhoto.jpg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
