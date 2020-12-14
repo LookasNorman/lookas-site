@@ -15,6 +15,7 @@ import { Tooltip } from '@material-ui/core'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    marginBottom: '1rem',
   },
   details: {
     display: 'flex',
