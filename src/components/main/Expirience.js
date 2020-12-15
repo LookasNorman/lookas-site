@@ -36,9 +36,9 @@ export default function Expirience() {
       </div>
       <CardContent className={classes.content}>
         <ListItem>
-          <listItemIcon>
+          <ListItemIcon>
             <Chip label="PHP" />
-          </listItemIcon>
+          </ListItemIcon>
           <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
             7 years
           </Typography>

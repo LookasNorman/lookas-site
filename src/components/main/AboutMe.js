@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardHeader from '@material-ui/core/CardHeader'
-import CardMedia from '@material-ui/core/CardMedia'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 import Chip from '@material-ui/core/Chip'
@@ -25,7 +24,10 @@ const useStyles = makeStyles((theme) => ({
     flex: '1 0 auto',
   },
   cover: {
-    minWidth: 320,
+    minWidth: 120,
+    maxHeight: 200,
+    height: 'auto',
+    width: 'auto',
   },
   chip: {
     display: 'flex',
@@ -45,10 +47,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AboutMe() {
   const classes = useStyles()
+  const tech = ['PHP', 'MySQL', 'Symfony', 'JavaScript', 'JQuery', 'Scrum', 'React']
 
   return (
     <Card className={classes.root}>
-      <CardMedia className={classes.cover} image={LKPhoto} title="Live from space album cover" />
+      <img className={classes.cover} src={LKPhoto} alt="Profile" />
       <div className={classes.details}>
         <CardHeader title="Łukasz Konieczny" subheader="PHP Backend Developer" />
         <CardContent className={classes.content}>
@@ -74,12 +77,9 @@ export default function AboutMe() {
           </Tooltip>
         </CardActions>
         <div className={classes.chip}>
-          <Chip label="PHP" />
-          <Chip label="Symfony" />
-          <Chip label="MySQL" />
-          <Chip label="Javascript" />
-          <Chip label="JQuery" />
-          <Chip label="React" />
+          {tech.map((item) => (
+            <Chip label={item} key={item} />
+          ))}
         </div>
       </div>
     </Card>

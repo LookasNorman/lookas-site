@@ -11,7 +11,6 @@ import {
   AccordionActions,
   AccordionDetails,
   AccordionSummary,
-  Divider,
   ListItem,
   ListItemText,
 } from '@material-ui/core'
@@ -21,10 +20,10 @@ import Chip from '@material-ui/core/Chip'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    flexDirection: 'column',
   },
   details: {
     display: 'flex',
-    flexDirection: 'column',
   },
   content: {
     flex: '1 0 auto',
@@ -54,6 +53,34 @@ const useStyles = makeStyles((theme) => ({
 export default function Portfolio() {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
+  const data = [
+    {
+      header: 'System zarządzania fermą',
+      text:
+        'Aplikacja służąca do gromadzenia parametrów chowu stad kur reprodukcyjnych. Prezentuje bieżące i archiwalne wyniki w postaci wykresów oraz raportów.',
+      chip: ['PHP', 'MySQL'],
+    },
+    {
+      header: 'Donations',
+      text: 'Aplikacja służąca do dzielenia się niepotrzebnymi rzeczami. Projekt w ramach kursu Coders Lab.',
+      chip: ['PHP', 'MySQL', 'Symfony', 'JavaScript'],
+    },
+    {
+      header: 'Jedzonko',
+      text: 'Aplikacja do planowania posiłków, Projekt w ramach kursu Coders Lab.',
+      chip: ['PHP', 'MySQL', 'Symfony', 'Scrum'],
+    },
+    {
+      header: 'Paczkolab',
+      text: 'Aplikacja do nadawania przesyłek. Projekt w ramach kursu Coders Lab.',
+      chip: ['PHP', 'MySQL'],
+    },
+    {
+      header: 'Bookstore',
+      text: 'Aplikacja do ewidencji książek. Projekt w ramach kursu Coders Lab.',
+      chip: ['JavaScript'],
+    },
+  ]
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false)
@@ -61,116 +88,37 @@ export default function Portfolio() {
 
   return (
     <Card className={classes.root}>
-      <div className={classes.details}>
-        <ListItem>
-          <ListItemAvatar>
-            <Avatar>
-              <Apps />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="Portfolio" />
-        </ListItem>
-        <CardContent className={classes.content}>
-          <ListItem>
-            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1bh-content" id="panel1bh-header">
-                <Typography className={classes.heading}>System zarządzania fermą</Typography>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>
+            <Apps />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary="Portfolio" />
+      </ListItem>
+      <CardContent className={classes.content}>
+        {data.map((item, key) => (
+          <ListItem key={key}>
+            <Accordion expanded={expanded === 'panel' + key} onChange={handleChange('panel' + key)}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />} id="panelbh-header">
+                <Typography className={classes.heading}>{item.header}</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
-                  Aplikacja służąca do gromadzenia parametrów chowu stad kur reprodukcyjnych. Prezentuje bieżące i
-                  archiwalne wyniki w postaci wykresów oraz raportów.
+                  {item.text}
                 </Typography>
               </AccordionDetails>
               <AccordionActions>
                 <div className={classes.chip}>
-                  <Chip label="PHP" />
-                  <Chip label="MySQL" />
+                  {item.chip.map((itemChip) => (
+                    <Chip label={itemChip} key={itemChip} />
+                  ))}
                 </div>
               </AccordionActions>
             </Accordion>
           </ListItem>
-          <Divider variant="inset" />
-          <ListItem>
-            <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2bh-content" id="panel2bh-header">
-                <Typography className={classes.heading}>Donations</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
-                  Aplikacja służąca do dzielenia się niepotrzebnymi rzeczami. Projekt w ramach kursu Coders Lab.
-                </Typography>
-              </AccordionDetails>
-              <AccordionActions>
-                <div className={classes.chip}>
-                  <Chip label="PHP" />
-                  <Chip label="MySQL" />
-                  <Chip label="Symfony" />
-                  <Chip label="JavaScript" />
-                </div>
-              </AccordionActions>
-            </Accordion>
-          </ListItem>
-          <Divider variant="inset" />
-          <ListItem>
-            <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel3bh-content" id="panel3bh-header">
-                <Typography className={classes.heading}>Jedzonko</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
-                  Aplikacja do planowania posiłków, Projekt w ramach kursu Coders Lab.
-                </Typography>
-              </AccordionDetails>
-              <AccordionActions>
-                <div className={classes.chip}>
-                  <Chip label="PHP" />
-                  <Chip label="MySQL" />
-                  <Chip label="Symfony" />
-                  <Chip label="Scrum" />
-                </div>
-              </AccordionActions>
-            </Accordion>
-          </ListItem>
-          <Divider variant="inset" />
-          <ListItem>
-            <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel4bh-content" id="panel4bh-header">
-                <Typography className={classes.heading}>Paczkolab</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
-                  Aplikacja do nadawania przesyłek. Projekt w ramach kursu Coders Lab.
-                </Typography>
-              </AccordionDetails>
-              <AccordionActions>
-                <div className={classes.chip}>
-                  <Chip label="PHP" />
-                  <Chip label="MySQL" />
-                </div>
-              </AccordionActions>
-            </Accordion>
-          </ListItem>
-          <Divider variant="inset" />
-          <ListItem>
-            <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel5bh-content" id="panel5bh-header">
-                <Typography className={classes.heading}>Bookstore</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
-                  Aplikacja do ewidencji książek. Projekt w ramach kursu Coders Lab.
-                </Typography>
-              </AccordionDetails>
-              <AccordionActions>
-                <div className={classes.chip}>
-                  <Chip label="JavaScript" />
-                </div>
-              </AccordionActions>
-            </Accordion>
-          </ListItem>
-        </CardContent>
-      </div>
+        ))}
+      </CardContent>
     </Card>
   )
 }
