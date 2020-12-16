@@ -47,41 +47,57 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AboutMe() {
   const classes = useStyles()
-  const tech = ['PHP', 'MySQL', 'Symfony', 'JavaScript', 'JQuery', 'Scrum', 'React']
+  const data = [
+    {
+      title: 'Łukasz Konieczny',
+      subheader: 'PHP Backend Developer',
+      text: [
+        'Junior PHP Backend Devloperem z podstawową znajomością frontend. Programuję w fraemworku Symfony 3.4 i 4.4. Z fraemworków frontend posiadam podstawową znajomość React.',
+        'W dotychczasowej karierze zawodowej zawsze starałem się wykorzystać technologie do poprawy wydajności pracy. Początkowo było to Excel z VBA później PHP i MySQL. Jako, że programowanie przynosi mi coraz więcej satysfakcji postanowiłem pójść na profesjonalny kurs, wybrałem Backend Developer PHP z rozszerzeniem o JavaScript: React + Redux. Tworząc aplikację do zarządzania fermą reprodukcyjną początkowo myślałem o usprawnieniu swojej pracy. Sukcesywnie rozbudowując jej funkcjonalności sprawiłem, że w chwili obecnej nie wyobrażamy sobie bez niej pracy na fermie.',
+      ],
+      tooltip: [
+        {
+          text: '+48 669 905 464',
+          icon: <PhoneIcon style={{ fill: 'orange' }} />,
+        },
+        {
+          text: 'lookasziebice@gmail.com',
+          icon: <EmailIcon style={{ fill: 'orange' }} />,
+        },
+      ],
+      chip: ['PHP', 'MySQL', 'Symfony', 'JavaScript', 'JQuery', 'Scrum', 'React'],
+    },
+  ]
 
-  return (
-    <Card className={classes.root}>
+  return data.map((item, key) => (
+    <Card key={key} className={classes.root}>
       <img className={classes.cover} src={LKPhoto} alt="Profile" />
       <div className={classes.details}>
-        <CardHeader title="Łukasz Konieczny" subheader="PHP Backend Developer" />
+        <CardHeader title={item.title} subheader={item.subheader} />
         <CardContent className={classes.content}>
-          <Typography variant="body2" color="textPrimary" component="p" align="justify">
-            Junior PHP Backend Devloperem z podstawową znajomością frontend. Programuję w fraemworku Symfony 3.4 i 4.4.
-            Z fraemworków frontend posiadam podstawową znajomość React.
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" align="justify">
-            W dotychczasowej karierze zawodowej zawsze starałem się wykorzystać technologie do poprawy wydajności pracy.
-            Początkowo było to Excel z VBA później PHP i MySQL. Jako, że programowanie przynosi mi coraz więcej
-            satysfakcji postanowiłem pójść na profesjonalny kurs, wybrałem Backend Developer PHP z rozszerzeniem o
-            JavaScript: React + Redux. Tworząc aplikację do zarządzania fermą reprodukcyjną początkowo myślałem o
-            usprawnieniu swojej pracy. Sukcesywnie rozbudowując jej funkcjonalności sprawiłem, że w chwili obecnej nie
-            wyobrażamy sobie bez niej pracy na fermie.
-          </Typography>
+          {item.text.map((item, key) => (
+            <Typography variant="body2" color="textPrimary" component="p" align="justify" key={key}>
+              {item}
+            </Typography>
+          ))}
         </CardContent>
         <CardActions>
-          <Tooltip title={<h3>+48 669 905 464</h3>} interactive className={classes.tooltip}>
-            <PhoneIcon style={{ fill: 'orange' }} />
-          </Tooltip>
-          <Tooltip title={<h3>lookasziebice@gmail.com</h3>} className={classes.tooltip}>
-            <EmailIcon style={{ fill: 'orange' }} />
-          </Tooltip>
+          {item.tooltip.map((item, key) => (
+            <Tooltip key={key} title={<h3>{item.text}</h3>} interactive className={classes.tooltip}>
+              {item.icon}
+            </Tooltip>
+          ))}
+
+          {/*<Tooltip title={<h3>lookasziebice@gmail.com</h3>} className={classes.tooltip}>*/}
+          {/*  <EmailIcon  />*/}
+          {/*</Tooltip>*/}
         </CardActions>
         <div className={classes.chip}>
-          {tech.map((item) => (
+          {item.chip.map((item) => (
             <Chip label={item} key={item} />
           ))}
         </div>
       </div>
     </Card>
-  )
+  ))
 }
