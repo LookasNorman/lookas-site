@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flex: '1 0 auto',
   },
+  according: {
+    display: 'inline-block',
+  },
   chip: {
     display: 'flex',
     justifyContent: 'center',
@@ -72,7 +75,7 @@ export default function Courses() {
         </ListItem>
         <CardContent className={classes.content}>
           <ListItem>
-            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+            <Accordion className={classes.according} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1bh-content" id="panel1bh-header">
                 <Typography className={classes.heading}>Coders Lab JavaScript: React + Redux</Typography>
               </AccordionSummary>

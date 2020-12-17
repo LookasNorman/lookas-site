@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import AboutMe from './AboutMe'
 import Portfolio from './Portfolio'
 import Expirience from './Expirience'
-import Courses from './Courses'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +31,6 @@ export default function Main() {
       <div className={classes.grid3}>
         <Portfolio />
         <Expirience />
-        <Courses />
       </div>
     </div>
   )
