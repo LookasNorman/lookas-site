@@ -27,18 +27,18 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export default function AboutMe({header}) {
+export default function AboutMe({data}) {
     const classes = useStyles()
 
     return (
         <Card className={classes.root}>
             <img className={classes.cover} src={LKPhoto} alt="Profile" />
             <div>
-                <MeInfo meInfo={header.mainInfo}/>
-                <MeDescription info={header.info}/>
+                <MeInfo data={data.mainInfo}/>
+                <MeDescription data={data.info}/>
                 <div className={classes.lineBtns}>
-                <Contact contact={header.tooltip}/>
-                <MeTechnologies data={header.technologies}/>
+                <Contact data={data.tooltip}/>
+                <MeTechnologies data={data.technologies}/>
                 </div>
             </div>
         </Card>

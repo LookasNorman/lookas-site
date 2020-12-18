@@ -14,12 +14,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export default function MeDescription({info}) {
+export default function MeDescription({data}) {
     const classes = useStyles()
 
     return (
         <CardContent className={classes.content}>
-            {info.map((item, key) => (
+            {data.map((item, key) => (
                 <Typography className={classes.parag} variant="body2" color="textPrimary" component="p" align="justify" key={key}>
                     {item.p}
                 </Typography>

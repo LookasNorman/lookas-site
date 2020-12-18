@@ -22,11 +22,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export default function Contact({contact}) {
+export default function Contact({data}) {
     const classes = useStyles()
     return (
         <div className={classes.tooltips}>
-            {contact.map((item, key) => (
+            {data.map((item, key) => (
                 <Tooltip key={key} title={<h3>{item.text}</h3>} interactive className={classes.tooltip}>
                     {item.icon}
                 </Tooltip>
