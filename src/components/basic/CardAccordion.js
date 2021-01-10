@@ -10,7 +10,7 @@ import {
   ListItem,
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-
+import GitHubMark from '../../media/GitHubMark.png'
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -45,8 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function CardAccordion ({ data, index1 }) {
-
+export default function CardAccordion({ data, index1 }) {
   const classes = useStyles()
 
   const [expanded, setExpanded] = React.useState(false)
@@ -57,32 +56,40 @@ export default function CardAccordion ({ data, index1 }) {
 
   return (
     <CardContent className={classes.content}>
-      {
-        data.accordion.map((item, index) => (
-          <ListItem key={index}>
-            <Accordion className={classes.list} expanded={expanded === 'panel' + index1 + index}
-                       onChange={handleChange('panel' + index1 + index)}>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography className={classes.heading}>{item.header}</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography component='span' variant='body2' className={classes.inline} color='textPrimary'>
-                  {item.text}
-                </Typography>
-              </AccordionDetails>
-              <div>
-                {item.chip && (
-                  <div className={classes.chip}>
-                    {item.chip.map((itemChip, key) => (
-                      <Chip className={classes.tech} label={itemChip} key={key + itemChip} />
-                    ))}
-                  </div>
-                )}
-              </div>
-            </Accordion>
-          </ListItem>
-        ))
-      }
+      {data.accordion.map((item, index) => (
+        <ListItem key={index}>
+          <Accordion
+            className={classes.list}
+            expanded={expanded === 'panel' + index1 + index}
+            onChange={handleChange('panel' + index1 + index)}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography className={classes.heading}>{item.header}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography component="span" variant="body2" className={classes.inline} color="textPrimary">
+                {item.text}
+              </Typography>
+            </AccordionDetails>
+            <div>
+              {item.chip && (
+                <div className={classes.chip}>
+                  {item.chip.map((itemChip, key) => (
+                    <Chip className={classes.tech} label={itemChip} key={key + itemChip} />
+                  ))}
+                </div>
+              )}
+              {item.gitLink && (
+                <div className={classes.chip}>
+                  <a href={item.gitLink} target="_blank" rel="noreferrer">
+                    <img src={GitHubMark} alt="GitHub repository link" />
+                  </a>
+                </div>
+              )}
+            </div>
+          </Accordion>
+        </ListItem>
+      ))}
     </CardContent>
   )
 }
