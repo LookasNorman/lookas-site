@@ -52,6 +52,20 @@ const state = {
         header: 'Portfolio',
         accordion: [
           {
+            header: 'System zarządzania utrzymania ruchu - backend',
+            text:
+              'Aplikacja do zarządzania zadaniami w dziale utrzymania ruchu. Podział na typy zadań, lokalizacje, maszyny. Karty przeglądów i napraw maszyn. Zamówienia i reklamacje.',
+            chip: ['Symfony 4.4', 'MySQL', 'ApiPlatform'],
+            gitLink: 'https://github.com/LookasNorman/hatcheryTodoSymfony',
+          },
+          {
+            header: 'System zarządzania fermą - backend',
+            text:
+              'Aplikacja służąca do gromadzenia parametrów chowu stad kur reprodukcyjnych. Endpointy dla aplikacji tworzonej w React. Upgrade poprzedniej aplikacji do REST Api z wykorzystaniem Symfony i React',
+            chip: ['Symfony 4.4', 'MySQL', 'ApiPlatform'],
+            gitLink: 'https://github.com/LookasNorman/FarmManagementRestApi',
+          },
+          {
             header: 'System zarządzania fermą',
             text:
               'Aplikacja służąca do gromadzenia parametrów chowu stad kur reprodukcyjnych. Prezentuje bieżące i archiwalne wyniki w postaci wykresów oraz raportów.',
