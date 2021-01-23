@@ -9,7 +9,7 @@ import {
   AccordionSummary,
   ListItem,
 } from '@material-ui/core'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import { Http, ExpandMore } from '@material-ui/icons'
 import GitHubMark from '../../media/GitHubMark.png'
 
 const useStyles = makeStyles((theme) => ({
@@ -63,7 +63,7 @@ export default function CardAccordion({ data, index1 }) {
             expanded={expanded === 'panel' + index1 + index}
             onChange={handleChange('panel' + index1 + index)}
           >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <AccordionSummary expandIcon={<ExpandMore />}>
               <Typography className={classes.heading}>{item.header}</Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -83,6 +83,13 @@ export default function CardAccordion({ data, index1 }) {
                 <div className={classes.chip}>
                   <a href={item.gitLink} target="_blank" rel="noreferrer">
                     <img src={GitHubMark} alt="GitHub repository link" />
+                  </a>
+                </div>
+              )}
+              {item.siteLink && (
+                <div className={classes.chip}>
+                  <a href={item.siteLink} target="_blank" rel="noreferrer">
+                    <Http />
                   </a>
                 </div>
               )}

@@ -72,6 +72,13 @@ const state = {
             chip: ['PHP', 'MySQL'],
           },
           {
+            header: 'Interaktywna mapa',
+            text:
+              'Stworzenie interaktywnej mapy dla fundacji PEPY Empowering Youth z Kambodży. Projekt wykonywany w ramach fundacji A Bit Of Help.',
+            chip: ['HTML', 'SVG', 'JavaScript', 'CSS'],
+            siteLink: 'https://lookaskonieczny.pl/cambodia2',
+          },
+          {
             header: 'Donations',
             text: 'Aplikacja służąca do dzielenia się niepotrzebnymi rzeczami. Projekt w ramach kursu Coders Lab.',
             chip: ['PHP', 'MySQL', 'Symfony', 'JavaScript'],
