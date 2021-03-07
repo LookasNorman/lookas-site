@@ -52,6 +52,13 @@ const state = {
         header: 'Portfolio',
         accordion: [
           {
+            header: 'System zarządzania produkcją na wylęgarnii - backend',
+            text:
+                'Aplikacja do zbierania informacji produkcyjnych na wylęgarnii. Przyjęcie jaj - dostawca, stado, data dostawy, data zniesienia, nakłady - dostawa jaj, inkubatory, odpad, zapłodnienie, wylęg. Przeniesienie dotychczasowej, rozproszonej dokuemntacji prowadzonej w plikach .xls w jedno miejsce dostępne w sieci Intranet lub Internet.',
+            chip: ['Symfony 4.4', 'MySQL', 'ApiPlatform'],
+            gitLink: 'https://github.com/LookasNorman/hatcheryProduction_symfony/tree/api',
+          },
+          {
             header: 'System zarządzania utrzymania ruchu - backend',
             text:
               'Aplikacja do zarządzania zadaniami w dziale utrzymania ruchu. Podział na typy zadań, lokalizacje, maszyny. Karty przeglądów i napraw maszyn. Zamówienia i reklamacje.',
