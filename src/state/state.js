@@ -52,11 +52,12 @@ const state = {
         header: 'Portfolio',
         accordion: [
           {
-            header: 'System zarządzania produkcją na wylęgarnii - backend',
+            header: 'System zarządzania produkcją na wylęgarnii - backend, frontend',
             text:
-                'Aplikacja do zbierania informacji produkcyjnych na wylęgarnii. Przyjęcie jaj - dostawca, stado, data dostawy, data zniesienia, nakłady - dostawa jaj, inkubatory, odpad, zapłodnienie, wylęg. Przeniesienie dotychczasowej, rozproszonej dokuemntacji prowadzonej w plikach .xls w jedno miejsce dostępne w sieci Intranet lub Internet.',
-            chip: ['Symfony 4.4', 'MySQL', 'ApiPlatform'],
+                'Aplikacja do zbierania informacji produkcyjnych na wylęgarnii. Przyjęcie jaj - dostawca, stado, data dostawy, data zniesienia, nakłady - dostawa jaj, inkubatory, odpad, zapłodnienie, wylęg. Przeniesienie dotychczasowej, rozproszonej dokuemntacji prowadzonej w plikach .xls w jedno miejsce dostępne w sieci Intranet lub Internet. Aplikacja w trakcie budowy',
+            chip: ['Symfony 5.2', 'MySQL', 'ApiPlatform', 'Webpack encore - React'],
             gitLink: 'https://github.com/LookasNorman/hatcheryProduction_symfony/tree/api',
+            siteLink: 'https://production.lookaskonieczny.com',
           },
           {
             header: 'System zarządzania utrzymania ruchu - backend',
