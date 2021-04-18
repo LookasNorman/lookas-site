@@ -52,12 +52,20 @@ const state = {
         header: 'Portfolio',
         accordion: [
           {
-            header: 'System zarządzania produkcją na wylęgarnii - backend, frontend',
+            header: 'System zarządzania produkcją na wylęgarnii',
             text:
-                'Aplikacja do zbierania informacji produkcyjnych na wylęgarnii. Przyjęcie jaj - dostawca, stado, data dostawy, data zniesienia, nakłady - dostawa jaj, inkubatory, odpad, zapłodnienie, wylęg. Przeniesienie dotychczasowej, rozproszonej dokuemntacji prowadzonej w plikach .xls w jedno miejsce dostępne w sieci Intranet lub Internet. Aplikacja w trakcie budowy',
-            chip: ['Symfony 5.2', 'MySQL', 'ApiPlatform', 'Webpack encore - React'],
-            gitLink: 'https://github.com/LookasNorman/hatcheryProduction_symfony/tree/api',
+                'Aplikacja do zbierania informacji produkcyjnych na wylęgarnii. Przyjęcie jaj - dostawca, stado, data dostawy, data zniesienia, nakłady - dostawa jaj, inkubatory, odpad, zapłodnienie, wylęg. Przeniesienie dotychczasowej, rozproszonej dokuemntacji prowadzonej w plikach .xls w jedno miejsce dostępne w sieci Intranet lub Internet. Aplikacja w trakcie budowy. Login: user@user.pl Password: Pa$$word',
+            chip: ['Symfony 4.4', 'MySQL'],
+            gitLink: 'https://github.com/LookasNorman/hatchery_production',
             siteLink: 'https://production.lookaskonieczny.com',
+          },
+          {
+            header: 'Miernik demokracji',
+            text:
+                'Strona wyświetlająca informacje o pracy rządu. Lista posłów, posiedzeń, głosowań. Dane pobierane ze strony sejm.gov.pl. Aplikacja stworzona w ramach fundacji A Bit of Help. Logowanie użytkownik: "user", hasło: "Pa$$word".',
+            chip: ['Symfony 4.4', 'MySQL', 'HtmlDomParser'],
+            gitLink: 'https://github.com/A-Bit-Of-Help/miernik-demokracji',
+            siteLink: 'https://miernikdemokracji.lookaskonieczny.com',
           },
           {
             header: 'System zarządzania utrzymania ruchu - backend',
